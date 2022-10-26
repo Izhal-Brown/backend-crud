@@ -24,7 +24,7 @@ const store = (req, res) => {
   if (image) { //merubah nama image ketika di upload
     const target = path.join(__dirname, '../uploads', image.originalname)// direktory, nama direktory, nama imagenya
     fs.renameSync(image.path, target)// rubah nama image sesuai nama aslinya
-    db.collection('products').insertOne({ name, price, stock, status, image_url: `http://localhost:5000/public/${image.originalname}` })
+    db.collection('products').insertOne({ name, price, stock, status, image_url: `https://backend-crud-m.herokuapp.com/public/${image.originalname}` })
       .then(result => res.send(result))
       .catch(error => res.send(error))
   }
@@ -46,7 +46,7 @@ const update = (req, res) => {
           price: price,
           stock: stock,
           status: status,
-          image_url: `http://localhost:5000/public/${image.originalname}`
+          image_url: `https://backend-crud-m.herokuapp.com/public/${image.originalname}`
         }
       })
       .then(result => res.send(result))
