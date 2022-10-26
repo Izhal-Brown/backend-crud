@@ -22,7 +22,7 @@ app.use((req, res, next) => { //membuat halaman jika halaman yang dituju ngga ad
   })
 })
 
-let port = process.env.PORT || 5000;
+let port = process.env.PORT || 3306;
 
 app.listen(port, () => {
   console.log(`App is running at the port http://localhost:${port}/api/v/product`)
